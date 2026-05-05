@@ -14,7 +14,7 @@ import seongmin0302.springmvc1core.web.frontcontroller.v2.controller.MemberFormC
 import seongmin0302.springmvc1core.web.frontcontroller.v2.controller.MemberListControllerV2;
 import seongmin0302.springmvc1core.web.frontcontroller.v2.controller.MemberSaveControllerV2;
 
-@WebServlet(name = "FrontControllerServletV2", urlPatterns = "/front-controller/v2/*")
+@WebServlet(name = "frontControllerServletV2", urlPatterns = "/front-controller/v2/*")
 public class FrontControllerServletV2 extends HttpServlet {
 
     private Map<String,ControllerV2> controllerMap = new HashMap<>();
