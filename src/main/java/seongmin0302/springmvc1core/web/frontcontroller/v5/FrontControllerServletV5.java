@@ -16,17 +16,36 @@ import seongmin0302.springmvc1core.web.frontcontroller.Myview;
 import seongmin0302.springmvc1core.web.frontcontroller.v3.controller.MemberFormControllerV3;
 import seongmin0302.springmvc1core.web.frontcontroller.v3.controller.MemberListControllerV3;
 import seongmin0302.springmvc1core.web.frontcontroller.v3.controller.MemberSaveControllerV3;
+import seongmin0302.springmvc1core.web.frontcontroller.v4.controller.MemberFormControllerV4;
+import seongmin0302.springmvc1core.web.frontcontroller.v4.controller.MemberListControllerV4;
+import seongmin0302.springmvc1core.web.frontcontroller.v4.controller.MemberSavecontrollerV4;
+import seongmin0302.springmvc1core.web.frontcontroller.v5.adapter.ControllerV3HandlerAdapter;
+import seongmin0302.springmvc1core.web.frontcontroller.v5.adapter.ControllerV4HandlerAdapter;
 
 @WebServlet(name = "frontControllerServletV5", urlPatterns = "/front-controller/v5/*")
 public class FrontControllerServletV5 extends HttpServlet {
 
-    private Map<String,Object> handlerMappingMap = new HashMap<>();
-    private List<MyHandlerAdapter> handlerAdapters = new ArrayList<>();
+    private final Map<String,Object> handlerMappingMap = new HashMap<>();
+    private final List<MyHandlerAdapter> handlerAdapters = new ArrayList<>();
 
     public FrontControllerServletV5() {
+        initHandlerMappingMap();
+        initHandlerAdapters();
+    }
+
+    private void initHandlerAdapters() {
+        handlerAdapters.add(new ControllerV3HandlerAdapter());
+        handlerAdapters.add(new ControllerV4HandlerAdapter());
+    }
+
+    private void initHandlerMappingMap() {
         handlerMappingMap.put("/front-controller/v5/v3/members/new-form",new MemberFormControllerV3());
         handlerMappingMap.put("/front-controller/v5/v3/members/save",new MemberSaveControllerV3());
         handlerMappingMap.put("/front-controller/v5/v3/members",new MemberListControllerV3());
+
+        handlerMappingMap.put("/front-controller/v5/v4/members/new-form",new MemberFormControllerV4());
+        handlerMappingMap.put("/front-controller/v5/v4/members/save",new MemberSavecontrollerV4());
+        handlerMappingMap.put("/front-controller/v5/v4/members",new MemberListControllerV4());
     }
 
     @Override
