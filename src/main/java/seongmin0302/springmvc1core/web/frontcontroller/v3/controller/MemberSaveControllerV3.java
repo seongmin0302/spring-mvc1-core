@@ -1,6 +1,5 @@
 package seongmin0302.springmvc1core.web.frontcontroller.v3.controller;
 
-import java.util.HashMap;
 import java.util.Map;
 
 import seongmin0302.springmvc1core.domain.member.Member;

@@ -9,9 +9,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import seongmin0302.springmvc1core.web.frontcontroller.ModelView;
 import seongmin0302.springmvc1core.web.frontcontroller.Myview;
-import seongmin0302.springmvc1core.web.frontcontroller.v4.ControllerV4;
 import seongmin0302.springmvc1core.web.frontcontroller.v4.controller.MemberFormControllerV4;
 import seongmin0302.springmvc1core.web.frontcontroller.v4.controller.MemberListControllerV4;
 import seongmin0302.springmvc1core.web.frontcontroller.v4.controller.MemberSavecontrollerV4;
@@ -49,7 +47,6 @@ public class FrontControllerServletV4 extends HttpServlet {
     private Myview viewResolver(String viewName) {
         return new Myview("/WEB-INF/views/"+  viewName + ".jsp");
     }
-
 
     private Map<String, String> createParamMap(HttpServletRequest request) {
         Map<String, String> paramMap=new HashMap<>();

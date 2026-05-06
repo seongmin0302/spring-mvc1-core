@@ -11,7 +11,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import seongmin0302.springmvc1core.web.frontcontroller.ModelView;
 import seongmin0302.springmvc1core.web.frontcontroller.Myview;
-import seongmin0302.springmvc1core.web.frontcontroller.v2.ControllerV2;
 import seongmin0302.springmvc1core.web.frontcontroller.v3.controller.MemberFormControllerV3;
 import seongmin0302.springmvc1core.web.frontcontroller.v3.controller.MemberListControllerV3;
 import seongmin0302.springmvc1core.web.frontcontroller.v3.controller.MemberSaveControllerV3;
